@@ -1,0 +1,16 @@
+1)  git init // инициализация git  в проекте
+2)  git config --global user.name "" //  настойка учетки git
+3)  git status //  статтус проекта
+4)  git add pom.xml //  добавление файла в git
+5)  .gitignore (.idea/* , *.class , .jar) //  не лоавляются в git
+6)  git commit -m "comment" //  закоммитить изменения
+7)  В github   создаем репозиторий. Копируем линк
+8)  git remote add project_name линк_на_удален_репо // создаем удаленный репозиторий у себя в проекте.
+9)  git push project_name master  // запушить в мастер.
+10) git tag "version_1.0"
+11) git branch branch_name // create branch
+12) git branch // see branch
+13) git checkout master // переключаться между ветками
+14) git merge branch_name // слить ветку в масетр
+15) git log //  история изменений.
+16)
