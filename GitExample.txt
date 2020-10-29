@@ -13,4 +13,3 @@
 13) git checkout master // переключаться между ветками
 14) git merge branch_name // слить ветку в масетр
 15) git log //  история изменений.
-16)
