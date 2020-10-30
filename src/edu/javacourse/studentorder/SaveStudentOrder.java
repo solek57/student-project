@@ -4,9 +4,23 @@ import edu.javacourse.studentorder.domain.Adult;
 import edu.javacourse.studentorder.domain.Child;
 import edu.javacourse.studentorder.domain.StudentOrder;
 
-public class SaveStudentOrder {
-    public static void main(String[] args) {
+import java.sql.*;
 
+public class SaveStudentOrder {
+    private static String url = "jdbc:h2:file:~/testdb";
+    private static String user = "sa";
+    private static String pwds = "123";
+    private static Connection con;
+
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        Class.forName("org.h2.Driver");
+        con = DriverManager.
+                getConnection(url, user, pwds);
+        Statement statement = con.createStatement();
+        ResultSet resultSet = statement.executeQuery("select * from jc");
+        while (resultSet.next()) {
+            System.out.println(resultSet.getLong(1) + "street " + resultSet.getString(2));
+        }
     }
 
     public static StudentOrder buildStudentOrder(long i) {

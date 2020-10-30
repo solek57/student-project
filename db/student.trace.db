@@ -1,0 +1,8 @@
+10-30 19:36:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "EX" не найдена
+Table "EX" not found; SQL statement:
+select * from ex [42102-166]
+10-30 19:50:16 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "EX" не найдена
+Table "EX" not found; SQL statement:
+select * from ex [42102-166]

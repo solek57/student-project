@@ -1,3 +1,4 @@
+/*//suslov-ds  123*/
 DROP TABLE IF EXISTS jc_student_child;
 DROP TABLE IF EXISTS jc_student_order;
 DROP TABLE IF EXISTS jc_passport_office;
