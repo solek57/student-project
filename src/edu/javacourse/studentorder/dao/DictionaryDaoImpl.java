@@ -1,5 +1,6 @@
 package edu.javacourse.studentorder.dao;
 
+import edu.javacourse.studentorder.config.Config;
 import edu.javacourse.studentorder.domain.Street;
 import edu.javacourse.studentorder.exception.DaoException;
 
@@ -8,9 +9,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DictionaryDaoImpl implements DictionaryDao {
-    private static String url = "jdbc:h2:file:~/testdb";
-    private static String user = "sa";
-    private static String pwds = "123";
+    private static String url = Config.getProperty(Config.DB_URL);
+    private static String user = Config.getProperty(Config.DB_LOGIN);
+    private static String pwds = Config.getProperty(Config.DB_PASSWORD);
 
     public Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName("org.h2.Driver");
@@ -22,7 +23,7 @@ public class DictionaryDaoImpl implements DictionaryDao {
         List<Street> streetList = new LinkedList<>();
 
         try(Connection connection = getConnection()) {
-            String sqlQuery = "select * from street where upper(street_name) like upper(?)";
+            String sqlQuery = "select * from jc where upper(street_name) like upper(?)";
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
             statement.setString(1, pattern);
             ResultSet resultSet = statement.executeQuery();

@@ -1,14 +1,20 @@
 package edu.javacourse.studentorder;
 
+import edu.javacourse.studentorder.dao.DictionaryDaoImpl;
 import edu.javacourse.studentorder.domain.Adult;
 import edu.javacourse.studentorder.domain.Child;
+import edu.javacourse.studentorder.domain.Street;
 import edu.javacourse.studentorder.domain.StudentOrder;
+import edu.javacourse.studentorder.exception.DaoException;
 
 import java.sql.*;
+import java.util.List;
 
 public class SaveStudentOrder {
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException, DaoException {
+        List<Street> list = new DictionaryDaoImpl().findStreets("2");
+        System.out.println(list.get(0).getStreetId()+ "  ele " + list.get(0).getStreetName());
     }
 
     public static StudentOrder buildStudentOrder(long i) {
