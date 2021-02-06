@@ -60,7 +60,7 @@ public class StudentOrderValidator
 //        AnswerChildren childAnswer = checkChildren(so);
 //        AnswerStudent studentAnswer = checkStudent(so);
 
-//        sendMail(so);
+        sendMail(so);
     }
 
     public AnswerCityRegister checkCityRegister(StudentOrder so) {

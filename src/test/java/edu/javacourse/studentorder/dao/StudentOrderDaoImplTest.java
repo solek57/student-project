@@ -51,10 +51,10 @@ public class StudentOrderDaoImplTest {
         Address address = new Address("195000", street, "10", "2", "121");
 
         // Муж
-        Adult husband = new Adult("Васильев", "Павел", "Николаевич", LocalDate.of(1995, 3, 18));
-        husband.setPassportSeria("" + (1000 + id));
-        husband.setPassportNumber("" + (100000 + id));
-        husband.setIssueDate(LocalDate.of(2017, 9, 15));
+        Adult husband = new Adult("Васильев", "Павел", "Николаевич", LocalDate.of(1995, 03, 18));
+        husband.setPassportSeria("" + 1234);
+        husband.setPassportNumber("" + 123456);
+        husband.setIssueDate(LocalDate.of(2015, 04, 11));
         PassportOffice po1 = new PassportOffice(1L, "", "");
         husband.setIssueDepartment(po1);
         husband.setStudentId("" + (100000 + id));

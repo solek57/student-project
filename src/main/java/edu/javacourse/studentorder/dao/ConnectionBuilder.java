@@ -9,6 +9,12 @@ import java.sql.SQLException;
 public class ConnectionBuilder
 {
     public static Connection getConnection() throws SQLException {
+        try {
+            Class.forName("org.h2.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         Connection con = DriverManager.getConnection(
                 Config.getProperty(Config.DB_URL),
                 Config.getProperty(Config.DB_LOGIN),
